@@ -7,7 +7,7 @@ CREATE TABLE Setor (
 
 CREATE TABLE Prateleira (
     Numero serial PRIMARY KEY,
-    Setor serial REFERENCES Setor,
+    Setor serial REFERENCES Setor
 );
 
 CREATE TABLE Usuario (
@@ -19,7 +19,7 @@ CREATE TABLE Usuario (
     EMailUsuario varchar(60) UNIQUE
 );
 
-CREATE TABLE Fornecedor_Endereco (
+CREATE TABLE Fornecedor (
     idFornecedor serial PRIMARY KEY,
     Nome varchar(60),
     Responsavel varchar(60),
@@ -47,7 +47,7 @@ CREATE TABLE Exemplar (
     idExemplar serial PRIMARY KEY,
     livro serial REFERENCES Livro,
     prateleira serial REFERENCES Prateleira,
-    fornecedor serial REFERENCES Fornecedor_Endereco,
+    fornecedor serial REFERENCES Fornecedor,
     DataAquisicao date NOT NULL,
     CustoAquisicao numeric(6,2) NOT NULL
 );
@@ -59,5 +59,5 @@ CREATE TABLE Emprestimo (
     DataEmprestimo date,
     TempoEmprestimo integer,
     DataDevolucao date,
-    Multa numeric(4,2),
+    Multa numeric(4,2)
 );
