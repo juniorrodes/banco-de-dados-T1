@@ -1,5 +1,3 @@
-/* Modelo Logico: */
-
 CREATE TABLE Setor (
     idSetor serial PRIMARY KEY,
     Nome varchar(60)
