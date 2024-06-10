@@ -1,3 +1,4 @@
+/* Modelo Fisico: */
 CREATE TABLE Setor (
     idSetor serial PRIMARY KEY,
     Nome varchar(60)
